@@ -1,0 +1,2 @@
+Java Day 1
+- data type practice
