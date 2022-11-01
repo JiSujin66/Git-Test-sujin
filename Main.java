@@ -8,10 +8,11 @@ public class Main {
             return;
         }
         System.out.println();
-       // List<members> members = db.members(58143026);
-        List<amounts> amounts =db.amounts("Lemon Ade","None");
+        //List<members> members = db.members(58143026);
+        List<amounts> amounts =db.amounts("EarlGray Tea","None");
         for(amounts amount:amounts){
-            System.out.println("Second_choice"+amount.getSecond_choice()+", Total_amount"+(amount.getPrice()+amount.getAdd_price()));
+            System.out.println("Second_choice: "+amount.getSecond_choice()+", Total_amount: "+amount.getAmount());
+
         }
        // List<menu> menus=db.menu();
         //List<option_choice> option_choices=db.option_choice();

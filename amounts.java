@@ -1,25 +1,7 @@
 public class amounts {
     private Integer phone;
-    private Integer price;
-    private Integer add_price;
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
-    public Integer getAdd_price() {
-        return add_price;
-    }
-
-    public void setAdd_price(Integer add_price) {
-        this.add_price = add_price;
-    }
-
     private Integer amount;
+
     private Integer time;
     private String second_choice;
 

@@ -82,12 +82,12 @@ public class Database {
 
     public List<amounts> amounts(String second_choice,String add_choice) {
         StringBuilder sb = new StringBuilder();
-        sb.append("SELECT "+ COLUMN_SECOND_CHOICE +" AS "+"'menu'," +
-                COLUMN_PRICE+"+"+COLUMN_ADD_PRICE+
-                " from "+TABLE_MENU+" JOIN "+TABLE_OPTION +
+        sb.append("SELECT "+ COLUMN_SECOND_CHOICE +", "+
+                COLUMN_PRICE+"+"+COLUMN_ADD_PRICE+" AS "+"amount"+
+                " FROM "+TABLE_MENU+" JOIN "+TABLE_OPTION +
                 " ON "+TABLE_MENU+"."+COLUMN_FIRST_CHOICE+"="+TABLE_OPTION+"."+COLUMN_CHOICE +
                 " WHERE "+TABLE_MENU+"."+COLUMN_SECOND_CHOICE+"="+"\'" + second_choice + "\'" +
-                "AND "+TABLE_OPTION+"."+COLUMN_ADD_CHOICE+"="+"\'" + add_choice + "\'");
+                " AND "+TABLE_OPTION+"."+COLUMN_ADD_CHOICE+"="+"\'" + add_choice + "\'");
 
 
         try (Statement statement = conn.createStatement();
@@ -100,11 +100,9 @@ public class Database {
             while (results.next()) {
                 amounts a = new amounts();
 
-               // a.setPhone(results.getInt(COLUMN_PHONE));
-                a.setPrice(results.getInt(COLUMN_PRICE));
-                a.setAdd_price(results.getInt(COLUMN_ADD_PRICE));
+             //   a.setPhone(results.getInt(COLUMN_PHONE));
                 a.setAmount(results.getInt(COLUMN_AMOUNT));
-                a.setTime(results.getInt(COLUMN_TIME));
+                //a.setTime(results.getInt(COLUMN_TIME));
                 a.setSecond_choice(results.getString(COLUMN_SECOND_CHOICE));
 
 
